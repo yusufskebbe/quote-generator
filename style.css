@@ -21,8 +21,8 @@ body{
   max-width: 900px;
   padding: 20px 30px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255,0.4);
-  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2); /* horizontal vertical blur radius */ 
+  background-color: rgba(189, 66, 66,1);
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0); /* horizontal vertical blur radius */ 
 }
 
 .quote-text{
@@ -43,6 +43,34 @@ body{
   text-transform: uppercase;
 }
 
+.buttons-container{
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button{
+  cursor: pointer;
+  font-size: 1.2rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  background-color: rgb(51, 51, 51);
+  outline: none;
+  padding: 0.5rem 1.8rem;
+  box-shadow: 0 0.3 rgba(121, 121, 121, 0.65);
+}
+
+button:hover{
+  background-color: rgba(51, 51, 51,0.5);
+  
+}
+
+button:active{  
+  transform: translate(0,.3rem);
+  box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65) ;
+}
 
 @media (max-width:800px){
     .quote-container{
@@ -50,7 +78,7 @@ body{
     }
     .quote-text{
       font-size: 2.3rem;
-      
+
     }
 
 }
