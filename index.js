@@ -1,14 +1,21 @@
 // get quotes form API
 
 
-const quoteButton = document.getElementById('new-quote')
+const quoteContainer = document.getElementById('quote-container');
+const quoteText = document.getElementById('quote');
+const quoteAuthor = document.getElementById('author');
+const xButton = document.getElementById('x');
+const quoteButton = document.getElementById('new-quote');
 
-quoteButton.addEventListener('click', onClick)
+quoteButton.addEventListener('click', newQuote)
+xButton.addEventListener('click', xQuote)
 
 
-function onClick() {
-  console.log('Button has been clicked');
+function xQuote() {
+  const xUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${quoteAuthor.textContent} `;
+  window.open(xUrl, '_blank')
 }
+
 
 
 let apiQuotes = [];
@@ -17,7 +24,8 @@ let apiQuotes = [];
 function newQuote() {
 
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)]
-  console.log(quote);
+  quoteText.textContent = quote.text;
+  quoteAuthor.textContent = quote.author;
 }
 
 async function getQuotes() {
